@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/541d852649.js" crossorigin="anonymous"></script>
+  <title>Rddmor library</title>
+</head>
+<body>
+  <header class="header">
+    <h1>Riddmor book library</h1>
+  </header>
+  
+  <!-- Main body -->
+  <main>
+    <!-- Search input area -->
+    <section class="search">
+      <div>
+        <input type="search" name="search-books" id="search-books" placeholder="Search this website">
+        <!-- <label for="search-books">Search this website</label> -->
+      </div>
+    </section>
+
+    <section class="main-button">
+      <button class="borrow-book">Borrow Book</button>
+      <button class="return-book">Return Book</button>
+    </section>
+
+    <!-- Books available -->
+    <section class="books-available">
+      <h2>Books Available in the library</h2>
+      <article class="book-details-container">
+        <!-- Book 1 -->
+        <table class="book-details-header">
+          <thead>
+            <tr>
+              <th>Book Name</th>
+              <th>Author's name</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody class="book-details">
+           <tr>
+            <th>The more you choose</th>
+            <th>Chinenye Anikwenze</th>
+            <th>3</th>
+           </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+:root {
+  --primary-color: rgb(106, 90, 2);
+  --gold-color: gold;
+  --box-shadow-color: rgb(113, 110, 94);
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  color: var(--primary-color);
+}
+
+.header {
+  text-align: center;
+}
+
+/* Search area */
+.search {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.search input {
+  padding: 10px 0 10px 8px;
+  width: 40%;
+  border: 2px solid var(--primary-color);
+  outline: none;
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 16px;
+  /* margin: auto; */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.search input:focus {
+  box-shadow: 1px 0.5px 1px 1px var(--box-shadow-color);
+}
+
+/* Borrow book button */
+.main-button {
+  display: flex;
+  gap: 40px;
+}
+.borrow-book,
+.return-book {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-family: 'EB Garamond',
+    serif;
+  font-size: 18px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+}
+
+.borrow-book {
+  background-color: rgb(135, 134, 131);
+  color: white;
+}
+
+.return-book {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+}
+
+.borrow-book:hover,
+.return-book:hover {
+  transform: translateY(-3px);
+  transition: 2s ease-in-out;
+}
+
+/* Books available */
+.books-available h2 {
+  text-align: center;
+}
+
+/* Table */
+.book-details-container table,
+table {
+  table-layout: auto;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 10px 5px;
+}
+
+.book-details-container thead th {
+  font-size: 18px;
+}
+
+.book-details-container tbody th {
+  font-weight: 500;
+}
+
+/* Media query */
+@media (max-width: 768px){
+  body {
+    padding-left: 10px;
+  }
+
+  .search input {
+    width: 80%;
+    text-align: start;
+  }
+  
+  .main-button {
+    display: flex;
+    gap: 20px;
+  }
+
+  .book-details-container table,
+  table {
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+  }
+}
