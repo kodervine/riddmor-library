@@ -50,3 +50,9 @@ function checkComplete () {
 }
 
 checkComplete()
+
+// Reduce quantity when borrowed
+const bookQuantity = document.querySelectorAll('.book-quantity');
+bookQuantity.forEach((qty)=> {
+  console.log(qty.innerText)
+})
