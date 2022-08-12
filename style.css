@@ -50,6 +50,11 @@ body {
   box-shadow: 1px 0.5px 1px 1px var(--box-shadow-color);
 }
 
+#suggestions {
+  list-style: none;
+  cursor: pointer;
+}
+
 /* Borrow book button */
 .main-button {
   display: flex;
