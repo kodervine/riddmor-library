@@ -1,35 +1,52 @@
 // Define global variable
-const searchBooksInput = document.querySelector('.search-books');
+const searchBooksInput = document.querySelector('#search-books');
 const borrowBookBtn = document.querySelector('.borrow-book');
 const returnBookBtn = document.querySelector('.return-book');
-const bookDetailsContainer = document.querySelector('.book-details');
-const bookDetailsTableRow = document.querySelector('.book-details');
 const bookName = document.querySelectorAll('.book-name')
 
-let bookNameArray = [...bookName]
-console.log(bookNameArray)
+console.log(bookName)
 
-// Search autocomplete for books available
-  function changeAutoComplete({target}) {
+// Array of the books themselves
+bookNameArray = []
+bookName.forEach(name => {
+    const individualBookName = name.innerText;
+    bookNameArray.push(individualBookName)
+    console.log(bookNameArray)
+    return individualBookName
+  });
+
+
+function checkComplete () {
+  let ulField = document.getElementById('suggestions');
+  searchBooksInput.addEventListener('input', changeAutoComplete);
+  ulField.addEventListener('click', selectItem);
+
+  function changeAutoComplete({ target }) {
     let data = target.value;
-    bookDetailsTableRow.innerHTML = ``;
-    if(data.length){
+    ulField.innerHTML = ``;
+    if (data.length) {
       let autoCompleteValues = autoComplete(data);
       autoCompleteValues.forEach(value => { addItem(value); });
     }
   }
 
-  function autoComplete(inputValue){
-    return bookNameArray.filter((value) => value.toLowerCase().includes(inputValue.toLowerCase()));
+  function autoComplete(inputValue) {
+    // let destination = ["Italy", "Spain", "Portugal", "Brazil"];
+    return bookNameArray.filter(
+      (value) => value.toLowerCase().includes(inputValue.toLowerCase())
+    );
   }
 
-  function addItem(value){
-    bookDetailsTableRow.innerHTML = bookDetailsTableRow.innerHTML + `<th>${value}</th>`
+  function addItem(value) {
+    ulField.innerHTML = ulField.innerHTML + `<li>${value}</li>`;
   }
 
-  function selectItem({ target }){
-    if (target.tagName === 'th'){
-      bookDetailsTableRow.value = target.textContent;
+  function selectItem({ target }) {
+    if (target.tagName === 'LI') {
+      searchBooksInput.value = target.textContent;
       ulField.innerHTML = ``;
     }
   }
+}
+
+checkComplete()
