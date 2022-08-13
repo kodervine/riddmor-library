@@ -99,8 +99,9 @@ body {
 .book-details-container table,
 table {
   table-layout: auto;
-  width: 80%;
-  text-align: center;
+  width: 60%;
+  text-align: left;
+  margin: auto;
   margin-bottom: 30px;
   padding: 10px 5px;
 }
@@ -135,7 +136,6 @@ table {
   .book-details-container table,
   table {
     font-size: 16px;
-    text-align: left;
     width: 100%;
   }
 }

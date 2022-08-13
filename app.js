@@ -31,7 +31,6 @@ function checkComplete () {
   }
 
   function autoComplete(inputValue) {
-    // let destination = ["Italy", "Spain", "Portugal", "Brazil"];
     return bookNameArray.filter(
       (value) => value.toLowerCase().includes(inputValue.toLowerCase())
     );
@@ -55,4 +54,31 @@ checkComplete()
 const bookQuantity = document.querySelectorAll('.book-quantity');
 bookQuantity.forEach((qty)=> {
   console.log(qty.innerText)
+})
+
+// Borrow book
+borrowBookBtn.addEventListener('click', ()=> {
+  bookNameTable = []
+  bookName.forEach(name => {
+    const individualBookName = name.innerText;
+    bookNameTable.push(individualBookName)
+    // console.log(bookNameArray)
+    // return individualBookName
+    bookNameTable.filter((item)=>{
+    if(searchBooksInput.value === item){
+      // return item
+      console.log(searchBooksInput.value)
+      console.log(individualBookName)
+      return item
+    }
+  })
+  });
+  // bookNameTable.filter((item)=>{
+  //   if(searchBooksInput.value === item){
+  //     // return item
+  //     console.log(searchBooksInput.value)
+  //     console.log(item)
+  //     return item
+  //   }
+  // })
 })
