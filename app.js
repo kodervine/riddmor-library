@@ -4,14 +4,14 @@ const borrowBookBtn = document.querySelector('.borrow-book');
 const returnBookBtn = document.querySelector('.return-book');
 const bookName = document.querySelectorAll('.book-name')
 
-console.log(bookName)
+// console.log(bookName)
 
 // Array of the books themselves
 bookNameArray = []
 bookName.forEach(name => {
     const individualBookName = name.innerText;
     bookNameArray.push(individualBookName)
-    console.log(bookNameArray)
+    // console.log(bookNameArray)
     return individualBookName
   });
 
@@ -51,34 +51,28 @@ function checkComplete () {
 checkComplete()
 
 // Reduce quantity when borrowed
-const bookQuantity = document.querySelectorAll('.book-quantity');
-bookQuantity.forEach((qty)=> {
-  console.log(qty.innerText)
-})
 
-// Borrow book
+// Borrow book event listener
 borrowBookBtn.addEventListener('click', ()=> {
-  bookNameTable = []
   bookName.forEach(name => {
     const individualBookName = name.innerText;
-    bookNameTable.push(individualBookName)
-    // console.log(bookNameArray)
-    // return individualBookName
-    bookNameTable.filter((item)=>{
-    if(searchBooksInput.value === item){
-      // return item
-      console.log(searchBooksInput.value)
-      console.log(individualBookName)
-      return item
-    }
-  })
+
+    // Variable to get each quantity
+    let bookQty = name.nextElementSibling.nextElementSibling
+
+    // Check if search input is equals any individualBookName and minus quantity
+      if(searchBooksInput.value === individualBookName){
+        // newBookQty = bookQty.innerText - 1;
+        // bookQty.innerText = newBookQty
+
+        if (bookQty.innerText < 1){
+          // Book has finished
+          alert('Book currently not available')
+        } else {
+           bookQty.innerText = bookQty.innerText - 1;
+        }
+        console.log(individualBookName)
+        console.log(bookQty)
+      }
   });
-  // bookNameTable.filter((item)=>{
-  //   if(searchBooksInput.value === item){
-  //     // return item
-  //     console.log(searchBooksInput.value)
-  //     console.log(item)
-  //     return item
-  //   }
-  // })
 })
