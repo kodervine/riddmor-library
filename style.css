@@ -7,6 +7,7 @@
 }
 
 :root {
+  --maroon-color: maroon;
   --primary-color: rgb(106, 90, 2);
   --gold-color: gold;
   --box-shadow-color: rgb(113, 110, 94);
@@ -55,6 +56,27 @@ body {
   cursor: pointer;
 }
 
+/* Success and return messages */
+.borrow-success-msg,
+.return-success-msg{
+  border: 2px solid green;
+  width: 30%;
+  margin: auto;
+  border-top: 40px solid green;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+  line-height: 0.5;
+  font-weight:bold;
+}
+
+.return-success-msg {
+  border: 2px solid maroon;
+  border-top: 40px solid maroon;
+}
+
 /* Borrow book button */
 .main-button {
   display: flex;
@@ -74,7 +96,7 @@ body {
 }
 
 .borrow-book {
-  background-color: rgb(135, 134, 131);
+  background-color: rgb(211, 182, 92);
   color: white;
 }
 
@@ -86,13 +108,15 @@ body {
 .borrow-book:hover,
 .return-book:hover {
   /* transform: translateY(-3px); */
-  transition: 2s ease-in-out;
-  opacity: 0.8;
+  transition: 1s ease-in-out;
+  background-color: rgb(188, 156, 61);
+  color: white;
 }
 
 /* Books available */
 .books-available h2 {
   text-align: center;
+  color: var(--maroon-color);
 }
 
 /* Table */
@@ -104,6 +128,9 @@ table {
   margin: auto;
   margin-bottom: 30px;
   padding: 10px 5px;
+  /* color: var(--maroon-color); */
+  color: rgb(89, 64, 2);
+  font-weight: 700;
 }
 
 .book-details-container thead th {
@@ -112,6 +139,10 @@ table {
 
 .book-details-container tbody th {
   font-weight: 500;
+}
+
+.display-none {
+  display: none;
 }
 
 /* Media query */
@@ -128,6 +159,12 @@ table {
     text-align: start;
   }
   
+
+  .borrow-success-msg,
+  .return-success-msg {
+    width: 70%;
+  }
+
   .main-button {
     display: flex;
     gap: 20px;
