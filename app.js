@@ -76,3 +76,28 @@ borrowBookBtn.addEventListener('click', ()=> {
       }
   });
 })
+
+// Return book event listener
+returnBookBtn.addEventListener('click', ()=> {
+  bookName.forEach(name => {
+    const individualBookName = name.innerText;
+
+    // Variable to get each quantity
+    let bookQty = name.nextElementSibling.nextElementSibling
+
+    // Check if search input is equals any individualBookName and minus quantity
+      if(searchBooksInput.value === individualBookName){
+        // newBookQty = bookQty.innerText - 1;
+        // bookQty.innerText = newBookQty
+
+        if (bookQty.innerText < 1){
+          // Book has finished
+          alert('Book currently not available')
+        } else {
+           bookQty.innerText = parseInt(bookQty.innerText) + 1;
+        }
+        console.log(individualBookName)
+        console.log(bookQty)
+      }
+  });
+})
