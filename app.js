@@ -53,9 +53,19 @@ checkComplete()
 // Reduce quantity when borrowed
 const borrowSuccessMsg = document.querySelector('.borrow-success-msg');
 const returnSuccessMsg = document.querySelector('.return-success-msg');
+const redSearchAlert = document.querySelector('.red-search-alert');
 
 // Borrow book event listener
 borrowBookBtn.addEventListener('click', ()=> {
+  // Conditional to validate input
+  if(searchBooksInput.value === ''){
+    redSearchAlert.classList.remove('display-none')
+        setTimeout(()=> {
+        redSearchAlert.classList.add('display-none')}, 1000)
+        searchBooksInput.value = '';
+  }
+
+  // Search for books proper
   bookName.forEach(name => {
     const individualBookName = name.innerText;
 
@@ -85,6 +95,15 @@ borrowBookBtn.addEventListener('click', ()=> {
 
 // Return book event listener
 returnBookBtn.addEventListener('click', ()=> {
+  // Conditional to validate input
+  if(searchBooksInput.value === ''){
+    redSearchAlert.classList.remove('display-none')
+      setTimeout(()=> {
+      redSearchAlert.classList.add('display-none')}, 1000)
+      searchBooksInput.value = '';
+  }
+
+  // Search book proper
   bookName.forEach(name => {
     const individualBookName = name.innerText;
 

@@ -58,7 +58,8 @@ body {
 
 /* Success and return messages */
 .borrow-success-msg,
-.return-success-msg{
+.return-success-msg,
+.red-search-alert{
   border: 2px solid green;
   width: 30%;
   margin: auto;
@@ -72,9 +73,10 @@ body {
   font-weight:bold;
 }
 
-.return-success-msg {
+.return-success-msg,
+.red-search-alert {
   border: 2px solid maroon;
-  border-top: 40px solid maroon;
+  border-top: 30px solid maroon;
 }
 
 /* Borrow book button */
@@ -161,7 +163,8 @@ table {
   
 
   .borrow-success-msg,
-  .return-success-msg {
+  .return-success-msg,
+  .red-search-alert {
     width: 70%;
   }
 
