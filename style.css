@@ -69,11 +69,11 @@ body {
   text-align: center;
   color: black;
   margin-bottom: 20px;
-  line-height: 0.5;
+  line-height: 1;
   font-weight:bold;
 }
 
-.return-success-msg,
+
 .red-search-alert {
   border: 2px solid maroon;
   border-top: 30px solid maroon;
@@ -141,6 +141,15 @@ table {
 
 .book-details-container tbody th {
   font-weight: 500;
+}
+
+.book-details-container a {
+  text-decoration: none;
+  color: rgb(89, 64, 2);
+}
+
+.book-details-container a:visited {
+  color: rgb(89, 64, 2);
 }
 
 .display-none {
