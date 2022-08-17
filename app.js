@@ -15,7 +15,6 @@ bookName.forEach(name => {
     return individualBookName
   });
 
-
 function checkComplete () {
   let ulField = document.getElementById('suggestions');
   searchBooksInput.addEventListener('input', changeAutoComplete);
@@ -82,7 +81,16 @@ borrowBookBtn.addEventListener('click', ()=> {
           alert('Book currently not available')
         } else {
            bookQty.innerText = bookQty.innerText - 1;
-          //  Display success and remove after few seconds
+          
+          //Set to local storage
+          let localBookQty= {
+            qty: bookQty.innerText
+          }
+
+          let localBookQty_serialized = JSON.stringify(localBookQty)
+          localStorage.setItem("bookQuantityStorage", localBookQty_serialized)
+
+          //  Display success message and remove class after few seconds
           borrowSuccessMsg.classList.remove('display-none')
            setTimeout(()=> {
             borrowSuccessMsg.classList.add('display-none')
